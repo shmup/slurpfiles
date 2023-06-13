@@ -1,57 +1,55 @@
-README.txt
-==========
+SLURPFILES(1)                   User Commands                    SLURPFILES(1)
+
 
 NAME
-----
-slurpfiles - concatenate non-binary files in a directory and print the content
+      slurpfiles - concatenate text files in a directory and print the content
 
 
 SYNOPSIS
---------
-slurpfiles [OPTIONS] [TARGET_DIR]
+      slurpfiles [OPTIONS] [TARGET_DIR]
 
 
 DESCRIPTION
------------
-This utility concatenates non-binary files in the specified target directory
-and prints the content. The filename and relative path are printed atop each
-text blob. By default, the current directory is used as the target directory.
+      This utility concatenates non-binary files in the specified target
+      directory and prints the content. The filename and relative path are
+      printed atop each text blob. By default, the current directory is used as
+      the target directory.
 
 
 OPTIONS
--------
-TARGET_DIR
-    The target directory to process. Default: current directory.
-
--r, --recursive
-    Process subdirectories recursively.
-
---ignore PATTERN [PATTERN...]
-    Ignore files matching specified patterns (e.g., *.css).
+      -r, --recursive                 run recursively
+      --ignore PATTERN [PATTERN...]   ignore files matching patterns
 
 
 EXAMPLES
---------
-Concatenate files in /optional/path:
-    slurpfiles /optional/path
-
-Concatenate files in /path/with/nested/dirs recursively:
-    slurpfiles -r /path/with/nested/dirs
-
-Concatenate files in /path while ignoring *.css and *.txt files:
-    slurpfiles --ignore *.css --ignore *.txt /path
+      slurpfiles /optional/path
+      slurpfiles -r /path/with/nested/dirs
+      slurpfiles --ignore *.css *.txt /path
 
 
 AUTHOR
-------
-Jared Tyler Miller <jared@smell.flowers>
+      Jared Tyler Miller <jared@smell.flowers>
 
 
 LICENSE
--------
-This software is released under the Zero-Clause BSD License.
+      This software is released under the Zero-Clause BSD License.
 
-SPDX-License-Identifier: 0BSD
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.
+      SPDX-License-Identifier: 0BSD
 
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+      Permission to use, copy, modify, and/or distribute this software for any
+      purpose with or without fee is hereby granted.
+
+      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+      WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+      MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+      ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+      WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+      ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+      OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+      The above is mine, but use the format below please? We should try to use
+      all the categories of the one below instead of the ones above, except
+      I do want my license block.
+
+      It should all be formatted like the below, btw my github username is
+      shmup and the repo is slurpfiles
