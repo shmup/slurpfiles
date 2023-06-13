@@ -1,0 +1,57 @@
+README.txt
+==========
+
+NAME
+----
+slurpfiles - concatenate non-binary files in a directory and print the content
+
+
+SYNOPSIS
+--------
+slurpfiles [OPTIONS] [TARGET_DIR]
+
+
+DESCRIPTION
+-----------
+This utility concatenates non-binary files in the specified target directory
+and prints the content. The filename and relative path are printed atop each
+text blob. By default, the current directory is used as the target directory.
+
+
+OPTIONS
+-------
+TARGET_DIR
+    The target directory to process. Default: current directory.
+
+-r, --recursive
+    Process subdirectories recursively.
+
+--ignore PATTERN [PATTERN...]
+    Ignore files matching specified patterns (e.g., *.css).
+
+
+EXAMPLES
+--------
+Concatenate files in /optional/path:
+    slurpfiles /optional/path
+
+Concatenate files in /path/with/nested/dirs recursively:
+    slurpfiles -r /path/with/nested/dirs
+
+Concatenate files in /path while ignoring *.css and *.txt files:
+    slurpfiles --ignore *.css --ignore *.txt /path
+
+
+AUTHOR
+------
+Jared Tyler Miller <jared@smell.flowers>
+
+
+LICENSE
+-------
+This software is released under the Zero-Clause BSD License.
+
+SPDX-License-Identifier: 0BSD
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.

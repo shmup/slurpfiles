@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""
+This script concatenates files in a directory and prints the content.
+
+The filename and relative path is atop each text blob.
+
+$ slurpfiles /optional/path
+$ slurpfiles -r /path/with/nested/dirs
+$ slurpfiles --ignore *.css --ignore *.txt /path
+
+http://ix.io/4y9F
+"""
+
+import os
+import argparse
+import fnmatch
+
+def is_binary(file_path):
+    with open(file_path, 'rb') as f:
+        chunk = f.read(1024)
+    return b'\0' in chunk
+
+def concatenate_files(target_dir, recursive=False, ignore_patterns=[]):
+    for root, _, files in os.walk(target_dir):
+        for file in files:
+            if any(fnmatch.fnmatch(file, pattern) for pattern in ignore_patterns):
+                continue
+
+            file_path = os.path.join(root, file)
+            if not is_binary(file_path):
+                print(f'{file_path}\n')
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    print(f.read())
+
+        if not recursive:
+            break
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Concatenate files in a directory")
+    parser.add_argument("target_dir", help="Target directory (default: current directory)", nargs="?", default=".", )
+    parser.add_argument("-r", "--recursive", help="Recursively process subdirectories" ,action="store_true")
+    parser.add_argument("--ignore", help="Ignore files matching patterns (e.g., *.css)", nargs="*", default=[])
+    args = parser.parse_args()
+
+    concatenate_files(args.target_dir, args.recursive, args.ignore)
