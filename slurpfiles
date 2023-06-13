@@ -6,7 +6,7 @@ The filename and relative path is atop each text blob.
 
 $ slurpfiles /optional/path
 $ slurpfiles -r /path/with/nested/dirs
-$ slurpfiles --ignore *.css --ignore *.txt /path
+$ slurpfiles --ignore *.css *.txt /path
 """
 
 import os
